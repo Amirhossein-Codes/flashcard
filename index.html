@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/alert.css">
+    <link rel="stylesheet" href="css/definition.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="cards">
+        <div class="card card-add" tabindex="-1">
+            <form id="form">
+                <input type="text" tabindex="1" required minlength="1" maxlength="20" name="english" id="english-w"
+                    class="english-w" placeholder="English Word">
+                <input type="text" tabindex="2" required minlength="1" maxlength="30" name="persian" id="persian-w"
+                    class="persian-w" placeholder="معنی فارسی">
+            </form>
+            <button class="add-button" tabindex="3"> &check; Add Card</button>
+        </div>
+        <div class="alerts">
+
+        </div>
+    </div>
+    <div class="definition-screen">
+        <audio id="pronuciation"></audio>
+        <div class="definition-screen-wrapper">
+            <div class="word-container">
+                <button class="pronunciation">&#9835;</button>
+                <div class="word-column">
+                    <h1 class="word"></h1>
+                    <h2 class="phonetic"></h2>
+                </div>
+                <button class="close-btn">&#10006;</button>
+            </div>
+
+            <!-- <div class="meanings-container">
+                <h2 class="part-of-speech">noun</h2>
+                <div class="all-synonyms">
+                    <div class="all-synonyms"></div>
+                </div>
+                <div class="all-antonyms">
+                    <div class="all-antonyms"></div>
+                </div>
+                <ol>
+                    <li>
+                        <p>One’s native land; the place or country in which one dwells; the place where one’s ancestors
+                            dwell or dwelt.</p>
+                        <div class="example">
+                            <p>"something is hard to tell!"</p>
+                        </div>
+                        <div class="synonyms">
+                            <p>Synonyms:</p><button>home</button>
+                        </div>
+                        <div class="antonyms">
+                            <p>Antonyms:</p><button>home</button>
+                        </div>
+
+                    </li>
+                    <hr>
+                </ol>
+            </div> -->
+
+
+        </div>
+    </div>
+    <script src="js/definition.js"></script>
+    <script src="js/dictionary.js"></script>
+    <script src="js/alert.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/card.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+.alert{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    user-select: none;
+    border-radius: 1rem;
+    transition: bottom .2s ease-in;
+    animation: alert-showing .5s ease-out 0s 1;
+    border-left: 10px solid hsl(0, 100%, 50%);
+    background-color: hsl(0, 40%, 80%);
+}
+.alert:nth-of-type(1){
+    bottom: 0px;
+}
+.alert:nth-of-type(2){
+    bottom: 100px;
+}
+.alert:nth-of-type(3){
+    bottom: 200px;
+}
+
+.alert span{
+    display: block;
+    width: 60px;
+    height: 60px;
+    font-size: 3rem;
+    line-height: 60px;
+    font-weight: 600;
+    text-align: center;
+    color: hsl(0, 100%, 10%);
+}
+
+.alert p{
+    user-select: text;
+    font-size: 2rem;
+    flex-grow: 1;
+    color: hsl(0, 100%, 10%);
+}
+
+.alert button{
+    display: block;
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: rgb(0, 0, 0,.5);
+    background-color: hsl(0, 40%, 60%);
+}
+.alert button:hover{
+    color: black;
+}
+
+@keyframes alert-showing {
+    0%{
+        transform: translateX(500px);
+    }
+    50%{
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+/* indicator */
+.alert::after{
+    content: " ";
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: 0px;
+    transform-origin: left;
+    animation: dismiss-indocator 5s ease-in-out 0s 1 forwards;
+    background-color: red;
+}
+@keyframes dismiss-indocator {
+    0%{
+        transform: scaleX(1);
+    }
+    100%{
+        transform: scaleX(0);
+    }
+}
+/*dissmise button */
+.removing{
+    animation: dismiss .2s linear 0s 1 forwards;
+}
+@keyframes dismiss {
+    0%{
+        transform: translateX(0vw);
+        
+    }
+    100%{
+        transform: translateX(-100vw);
+    }
+}
+
+@media screen and (max-width:600px) {
+    .alert{
+        border-left: 6px solid red;
+        height: 80px;
+    }
+    .alert::after{
+        height: 2px;
+        border-radius: 50%;
+    }
+    .alert span{
+        font-size: 2rem;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .alert p{
+        font-size: 1rem;
+    }
+    .alert button{
+        flex-grow: 1;
+        display: block;
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+        line-height: 80px;
+    }
+    .alert:nth-of-type(1){
+        bottom: 0px;
+    }
+    .alert:nth-of-type(2){
+        bottom: 80px;
+    }
+    
+    .alert:nth-of-type(3){
+        bottom: 160px;
+    }
+    
+}
